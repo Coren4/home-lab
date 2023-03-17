@@ -2,7 +2,7 @@ version: "3.6"
 services:
   portainer:
     container_name: portainer
-    image: portainer/portainer-ce:latest
+    image: portainer/portainer-be:latest
     ports:
       - 9443:9443
     volumes:
