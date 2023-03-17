@@ -8,4 +8,5 @@ services:
     volumes:
       - /mnt/home-lab/docker/portainer/data:/data
       - /var/run/docker.sock:/var/run/docker.sock
+      - /mnt/home-lab:/mnt/home-lab
     restart: unless-stopped
