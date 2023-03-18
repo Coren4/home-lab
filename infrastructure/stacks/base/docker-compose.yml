@@ -1,0 +1,13 @@
+version: "3.6"
+services:
+  portainer:
+    container_name: git-sync
+    image: registry/git-sync:latest
+    user: 1000:1000
+    volumes:
+      - $HOME/git_sync:/tmp/git
+    command:
+      - '--repo=https://github.com/Coren4/home-lab.git'
+      - '--root=/tmp/git/home-lab'
+      - '--period=60s'
+    restart: unless-stopped
