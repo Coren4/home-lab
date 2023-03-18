@@ -30,8 +30,8 @@ services:
     image: grafana/grafana:latest
     user: ${UID}:${GID}
     volumes:
-      - ${HOME}/git_sync/home-lab/docker/grafana/grafana.ini:/etc/grafana/grafana.ini:ro
-      - ${HOME}/git_sync/home-lab/docker/grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yaml:ro
+      - ${HOME}/git_sync/home-lab/docker_config/grafana/grafana.ini:/etc/grafana/grafana.ini:ro
+      - ${HOME}/git_sync/home-lab/docker_config/grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yaml:ro
       - ${HOME}/docker_data/grafana/data:/var/lib/grafana
     ports:
       - 3000:3000
