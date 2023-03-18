@@ -7,8 +7,7 @@ services:
     volumes:
       - $HOME/git-sync:/tmp/git:rw
     environment:
-      - GIT_SYNC_REPO=https://github.com/Coren4/home-lab.git
+      - GIT_SYNC_REPO=https://github.com/Coren4/home-lab
       - GIT_SYNC_ROOT=/tmp/git
       - GIT_SYNC_PERIOD=60s
-      - GIT_SYNC_PERMISSIONS=0777
     restart: unless-stopped
