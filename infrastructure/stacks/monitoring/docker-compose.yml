@@ -39,10 +39,21 @@ services:
       - prometheus
     restart: unless-stopped
 
+  promtail:
+    image: grafana/promtail:latest
+    container_name: promtail
+    volumes:
+      - /var/log:/var/log:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - ${HOME}/git_sync/home-lab/docker_config/promtail/config:/etc/promtail-config/:ro
+    command: -config.file=/etc/promtail-config/promtail.yml
+    depends_on:
+      - "loki"
+    restart: unless-stopped
+
   node-exporter:
     image: prom/node-exporter:latest
     container_name: node-exporter
-    restart: unless-stopped
     volumes:
       - /proc:/host/proc:ro
       - /sys:/host/sys:ro
@@ -52,3 +63,4 @@ services:
       - '--path.rootfs=/rootfs'
       - '--path.sysfs=/host/sys'
       - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+    restart: unless-stopped
