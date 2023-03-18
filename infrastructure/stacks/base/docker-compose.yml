@@ -2,7 +2,7 @@ version: "3.6"
 services:
   portainer:
     container_name: git-sync
-    image: registry/git-sync:latest
+    image: registry.k8s.io/git-sync/git-sync:latest
     user: 1000:1000
     volumes:
       - $HOME/git_sync:/tmp/git
