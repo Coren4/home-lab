@@ -3,12 +3,12 @@ services:
   git-sync:
     container_name: git-sync
     image: registry.k8s.io/git-sync/git-sync:v3.6.5
-    user: 1000:1000
+    user: $UID:$GID
     volumes:
       - $HOME/git-sync:/tmp/git:rw
     environment:
       - GIT_SYNC_REPO=https://github.com/Coren4/home-lab.git
-      - GIT_SYNC_ROOT=/tmp/git/home-lab
+      - GIT_SYNC_ROOT=/tmp/git
       - GIT_SYNC_WAIT=60z
       - GIT_SYNC_PERMISSIONS=0777
     restart: unless-stopped
