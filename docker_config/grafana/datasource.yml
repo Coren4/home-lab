@@ -8,7 +8,6 @@ datasources:
   - name: Loki
     type: loki
     url: http://loki:3100
-    isDefault: true
     access: proxy
     jsonData:
       maxLines: 1000
