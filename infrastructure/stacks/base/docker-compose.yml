@@ -7,7 +7,7 @@ services:
     volumes:
       - $HOME/git_sync:/tmp/git
     command:
-      - '--repo=https://github.com/Coren4/home-lab.git'
-      - '--root=/tmp/git/home-lab'
-      - '--period=60s'
+      - '-repo=https://github.com/Coren4/home-lab.git'
+      - '-root=/tmp/git/home-lab'
+      - '-period=60s'
     restart: unless-stopped
