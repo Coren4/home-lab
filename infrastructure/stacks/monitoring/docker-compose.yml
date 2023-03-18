@@ -27,7 +27,7 @@ services:
 
   grafana:
     container_name: grafana
-    image: grafana/grafana:latest
+    image: grafana/grafana-oss:latest
     user: ${UID}:${GID}
     volumes:
       - ${HOME}/git_sync/home-lab/docker_config/grafana/grafana.ini:/etc/grafana/grafana.ini:ro
