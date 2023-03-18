@@ -9,6 +9,6 @@ services:
     environment:
       - GIT_SYNC_REPO=https://github.com/Coren4/home-lab.git
       - GIT_SYNC_ROOT=/tmp/git/home-lab
-      - GIT_SYNC_WAIT=60s
+      - GIT_SYNC_WAIT=60
       - GIT_SYNC_PERMISSIONS=0777
     restart: unless-stopped
