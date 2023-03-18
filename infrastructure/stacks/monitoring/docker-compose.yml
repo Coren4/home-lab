@@ -7,17 +7,17 @@ services:
       - 3100:3100
     command: -config.file=/etc/loki/local-config.yaml
     volumes:
-      - $HOME/git_sync/home-lab/docker_config/loki/config.yaml:/etc/loki/config.yaml:ro
-      - $HOME/docker_data/loki/data:/data/loki
+      - ${HOME}/git_sync/home-lab/docker_config/loki/config.yaml:/etc/loki/config.yaml:ro
+      - ${HOME}/docker_data/loki/data:/data/loki
     restart: unless-stopped
 
   prometheus:
     container_name: prometheus
     image: prom/prometheus:latest
-    user: 1000:1000
+    user: ${UID}:${GID}
     volumes:
-      - $HOME/git_sync/home-lab/docker_config/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
-      - $HOME/docker_data/prometheus/data:/prometheus
+      - ${HOME}/git_sync/home-lab/docker_config/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ${HOME}/docker_data/prometheus/data:/prometheus
     ports:
       - 9090:9090
 # most likely to remove
@@ -28,11 +28,11 @@ services:
   grafana:
     container_name: grafana
     image: grafana/grafana:latest
-    user: 1000:1000
+    user: ${UID}:${GID}
     volumes:
-      - $HOME/git_sync/home-lab/docker/grafana/grafana.ini:/etc/grafana/grafana.ini:ro
-      - $HOME/git_sync/home-lab/docker/grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yaml:ro
-      - $HOME/docker_data/grafana/data:/var/lib/grafana
+      - ${HOME}/git_sync/home-lab/docker/grafana/grafana.ini:/etc/grafana/grafana.ini:ro
+      - ${HOME}/git_sync/home-lab/docker/grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yaml:ro
+      - ${HOME}/docker_data/grafana/data:/var/lib/grafana
     ports:
       - 3000:3000
     links:

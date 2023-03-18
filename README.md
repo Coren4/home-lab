@@ -6,6 +6,6 @@ Basic docker stack managed with GitOps logic
 
 ## Start with:
 1. Create directory `docker_data` at $HOME
-2. Create directory  `git-sync`  at $HOME
+2. Create directory  `git_sync`  at $HOME
 3. Startup portainer with docker compose file dedicated for Portainer
 4. Setup Portainer stacks aiming remaining docker-compose files from infrastructure
