@@ -3,9 +3,9 @@ services:
   git-sync:
     container_name: git-sync
     image: registry.k8s.io/git-sync/git-sync:v3.6.5
-    user: $UID:$GID
+    user: ${UID}:${GID}
     volumes:
-      - $HOME/git_sync:/tmp/git
+      - ${HOME}/git_sync:/tmp/git
     environment:
       - GIT_SYNC_REPO=https://github.com/Coren4/home-lab
       - GIT_SYNC_ROOT=/tmp/git
