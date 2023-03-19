@@ -31,7 +31,7 @@ services:
     user: ${UID}:${GID}
     volumes:
       - ${HOME}/git_sync/home-lab/docker_config/grafana/grafana.ini:/etc/grafana/grafana.ini:ro
-      - ${HOME}/git_sync/home-lab/docker_config/grafana/provisioning:/usr/share/grafana/conf/provisioning:ro
+      - ${HOME}/git_sync/home-lab/docker_config/grafana/provisioning:/etc/grafana/provisioning:ro
       - ${HOME}/git_sync/home-lab/docker_config/grafana/dashboards:/var/lib/grafana/dashboards:ro
       - ${HOME}/docker_data/grafana/data:/var/lib/grafana
     ports:
