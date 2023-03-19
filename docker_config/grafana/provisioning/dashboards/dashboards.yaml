@@ -2,12 +2,9 @@ apiVersion: 1
 
 providers:
   - name: dashboards
-    folder: 'General'
+    folder: General
     type: file
-    disableDeletion: true
-    updateIntervalSeconds: 30
     options:
       path: /var/lib/grafana/dashboards
-      foldersFromFilesStructure: true
 
 #Node Exporter dashboard source https://grafana.com/grafana/dashboards/1860-node-exporter-full/
