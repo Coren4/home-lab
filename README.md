@@ -1,8 +1,7 @@
 # Minimal Home-Lab starter pack
 Basic docker stack managed with GitOps logic
 
-#TODO
-- deploy Portainer stacks automatically if possible(?)
+Private use only
 
 ## Start with:
 1. Create directory `docker_data` at $HOME
