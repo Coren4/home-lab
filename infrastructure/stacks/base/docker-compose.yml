@@ -13,6 +13,7 @@ services:
     restart: unless-stopped
 
   nginx:
+    container_name: nginx
     image: nginx:latest
     ports:
       - "6443:6443"
