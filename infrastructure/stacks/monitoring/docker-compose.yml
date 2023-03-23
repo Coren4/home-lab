@@ -48,6 +48,4 @@ services:
       - /var/lib/docker/containers:/var/lib/docker/containers:ro
       - ${HOME}/git_sync/home-lab/docker_config/promtail/config:/etc/promtail-config/:ro
     command: -config.file=/etc/promtail-config/promtail.yml
-    depends_on:
-      - "loki"
     restart: unless-stopped
