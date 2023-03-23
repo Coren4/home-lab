@@ -11,3 +11,11 @@ services:
       - GIT_SYNC_ROOT=/tmp/git
       - GIT_SYNC_PERIOD=60s
     restart: unless-stopped
+
+  nginx:
+    container_name: nginx
+    image: nginx:latest
+    ports:
+      - "6443:6443"
+    volumes:
+      - ${HOME}/git_sync/home-lab/docker_config/nginx/nginx.conf:/etc/nginx/nginx.conf
